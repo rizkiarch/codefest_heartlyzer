@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "codefest_heartlyzer_backend": {
+      "candid": "src/codefest_heartlyzer_backend/codefest_heartlyzer_backend.did",
+      "package": "codefest_heartlyzer_backend",
+      "type": "rust"
+    },
+    "codefest_heartlyzer_frontend": {
+      "dependencies": [
+        "codefest_heartlyzer_backend"
+      ],
+      "source": [
+        "src/codefest_heartlyzer_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "codefest_heartlyzer_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
