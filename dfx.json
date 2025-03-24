@@ -2,6 +2,7 @@
   "canisters": {
     "codefest_heartlyzer_backend": {
       "candid": "src/codefest_heartlyzer_backend/codefest_heartlyzer_backend.did",
+      "wasm": "src/codefest_heartlyzer_backend/pkg/codefest_heartlyzer_backend.wasm",
       "package": "codefest_heartlyzer_backend",
       "type": "rust"
     },
