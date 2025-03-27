@@ -25,6 +25,7 @@ function App() {
 
   const chatBoxRef = useRef();
 
+  console.log("chatBoxRef", chatBoxRef);
   const [AuthState, setAuthState] = useState({
     actor: undefined,
     authClient: undefined,
@@ -44,14 +45,15 @@ function App() {
 
   const fetchPredictionHistory = async () => {
     try {
-      if (AuthState.actor) {
+      if (AuthState.actor && AuthState.isAuthenticated) {
+        await updateActor(setAuthState, setUserInfo, setChat);
+
         const history = await AuthState?.actor?.get_prediction_history();
-        console.log('Prediction history:', history);
         // Format history items with additional UI metadata
         const formattedHistory = history.map((item, index) => ({
           ...item,
           label: `Analisis Jantung #${index + 1}`,
-          timestamp: new Date().toISOString(), // In a real app, this would come from the backend
+          timestamp: new Date().toISOString(),
         }));
         setPredictionHistory(formattedHistory);
       }
@@ -88,9 +90,13 @@ ${currentQuestion.example}`
 
   useEffect(() => {
     if (chatBoxRef.current) {
-      chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+      setTimeout(() => {
+        chatBoxRef.current.scrollTop = chatBoxRef.current.scrollHeight;
+      }, 0);
     }
   }, [chat]);
+
+  console.log(predictionResult)
 
   const handleSelectHistory = (historyItem) => {
     setPredictionResult(historyItem);
