@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ChatInput = ({ inputValue, setInputValue, handleSubmit, isLoading, isAuthenticated, questionIndex, questions }) => {
+const ChatInput = ({ inputValue, setInputValue, handleSubmit, isLoading, questionIndex, questions }) => {
     return (
         <div className="border-t border-gray-200 bg-white p-4 shadow-md">
             <form onSubmit={handleSubmit} className="flex items-center space-x-2 max-w-3xl mx-auto">
