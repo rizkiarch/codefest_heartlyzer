@@ -8,6 +8,9 @@ Heartlyzer adalah aplikasi prediksi risiko serangan jantung yang dikembangkan me
 - **ICP Integration**: Backend berbasis **Rust** yang berjalan di **Internet Computer (ICP)** untuk kecepatan dan keamanan.
 - **Frontend React.js**: UI yang interaktif dan responsif menggunakan **React.js**.
 
+## Screenshot
+![Screenshot](screenshoot.png)
+
 ## Teknologi yang Digunakan
 - **Backend**: Rust dengan framework candid untuk ICP
 - **Frontend**: React.js dengan Tailwind untuk tampilan
